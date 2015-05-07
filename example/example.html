@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../jquery.bootstrap-pureClearButton-ex.js"></script>
+
+<style type="text/css">
+	body {
+		margin: 10px;
+	}
+</style>
+
+<title>pureClearButton Example</title>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h1>Pure Clear Button Example.</h1>
+				<p>Bootstrap + JQuery</p>
+			</div>
+		</div>
+	</div> <!-- row -->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-info">
+				<!-- panel-body -->
+				<div class="panel-body" style="padding-top:30px; margin-left: 30px; margin-right: 30px">
+					<div style="display:none" id="login-alert" class="alert alert-danger"></div>
+					<!-- form -->
+					<form class="form-horizontal" role="from">
+						<!-- 아이디 -->
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">text</label>
+							<div class="input-group col-md-9">
+								<input type="text" class="form-control input-md" name="text" value="" placeholder="text" tabindex="1" data-pure-clear-button>
+							</div>
+						</div>
+						<!-- 비밀번호 -->
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">password</label>
+							<div class="input-group col-md-9">
+								<input type="password" class="form-control input-md" name="password" placeholder="password" tabindex="2" data-pure-clear-button>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">datetime</label>
+							<div class="input-group col-md-9">
+								<input type="datetime" class="form-control input-md" name="datetime" placeholder="datetime" tabindex="3" data-pure-clear-button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">number</label>
+							<div class="input-group col-md-9">
+								<input type="number" class="form-control input-md" name="number" placeholder="number" tabindex="4" data-pure-clear-button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">email</label>
+							<div class="input-group col-md-9">
+								<input type="email" class="form-control input-md" name="email" placeholder="email" tabindex="5" data-pure-clear-button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">url</label>
+							<div class="input-group col-md-9">
+								<input type="url" class="form-control input-md" name="url" placeholder="url" tabindex="6" data-pure-clear-button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">search</label>
+							<div class="input-group col-md-9">
+								<input type="search" class="form-control input-md" name="search" placeholder="search" tabindex="7" data-pure-clear-button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">tel</label>
+							<div class="input-group col-md-9">
+								<input type="tel" class="form-control input-md" name="tel" placeholder="tel" tabindex="8" data-pure-clear-button>
+							</div>
+						</div>
+						<br>
+						<br>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">data option 'true'</label>
+							<div class="input-group col-md-9">
+								<input type="text" class="form-control input-md" name="tel" placeholder="data option 'true'" tabindex="8" data-pure-clear-button="true">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">data option 'false'</label>
+							<div class="input-group col-md-9">
+								<input type="text" class="form-control input-md" name="tel" placeholder="data option 'false'" tabindex="8" data-pure-clear-button="false">
+							</div>
+						</div>
+						<br>
+						<br>
+						<div class="form-group">
+							<label for="" class="control-label col-md-3">operations</label>
+							<div class="input-group col-md-9">
+								<input type="text" id="test" class="form-control input-md" name="test" placeholder="operations" tabindex="9">
+							</div>
+						</div>
+						<div class="btn-group col-md-offset-3">
+							<button id="create" type="button" role="button" data-event="create" class="btn btn-primary">Create</button>
+							<button id="destroy" type="button" role="button" data-event="destroy" class="btn btn-primary">Destroy</button>
+							<button id="show" type="button" role="button" data-event="show" class="btn btn-info">Show</button>
+							<button id="hide" type="button" role="button" data-event="hide" class="btn btn-info">Hide</button>
+						</div>
+					</form>
+				</div> <!-- panel-body -->
+			</div> <!-- panel -->
+		</div> <!-- loginBox -->
+	</div> <!-- row -->
+</div> <!-- container -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.pureClearButton.setDefault({
+			//icon: 'glyphicon-plus'
+		});
+		
+		$("[data-event]").on("click", function(e){
+			$("#test").pureClearButton(this.id);
+		});
+		
+		/* $("#show").on("click", function(){
+			$("#test").pureClearButton("show");
+		});
+		$("#hide").on("click", function(){
+			$("#test").pureClearButton("hide");
+		}); */
+	});
+</script>
+</body>
+</html>
