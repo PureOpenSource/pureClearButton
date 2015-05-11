@@ -146,7 +146,7 @@
 			function(index, element){
 			var $element = $(element);
 			
-			if(($element.data("pure-clear-button") == undefined || $element.data("pure-clear-button") === 'false') && !$element.hasClass("has-pure-clear-button")){
+			if(($element.attr("data-pure-clear-button") == undefined || $element.attr("data-pure-clear-button") === 'false') && !$element.hasClass("has-pure-clear-button")){
 				return;
 			} 
 			Plugin.call($element, 'create');
