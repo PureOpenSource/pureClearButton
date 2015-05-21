@@ -131,7 +131,7 @@
 		// input value 제거, 포커스 이동
 		$input.val("").focus();
 		
-		if($input.data('pure.pureClearButton').options.clearValidation && $.validator){
+		if($.pureClearButton.DEFAULTS.clearValidation && $.validator){
 			// validation tooltip, class 제거
 			$input.removeData("title").tooltip("destroy");
 			$input.closest('.form-group').removeClass('has-error has-success');
