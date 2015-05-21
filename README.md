@@ -1,8 +1,13 @@
 # Pure Clear Button
 Bootstrap + JQuery, Input Clear Button
 
-## 시작하기
-Clear Button이 필요한 input에 `data-pure-clear-button`을 추가한다.
+## Getting Start
+Load the script in your project.
+```html
+<script src="jquery.bootstrap-pureClearButton.js"></script>
+```
+
+Adding the `data-pure-clear-button` attribute to your text fields.
 ```html
 <input type="text" data-pure-clear-button>
 <input type="text" data-pure-clear-button="true">
@@ -21,27 +26,27 @@ Clear Button이 필요한 input에 `data-pure-clear-button`을 추가한다.
 ## Method
 + __.pureClearButtn('create')__
 
-Clear Button을 생성한다.
+Create the clear button in HTML DOM.
 ```javascript
 $("#inputText").pureClearButton('create');
 ```
 + __.pureClearButtn('destroy')__
 
-Clear Button을 제거한다.
+Remove the clear button in HTML DOM.
 ```javascript
 $("#inputText").pureClearButton('destroy');
 ```
 
 + __.pureClearButtn('show')__
 
-Clear Button을 화면에 표시한다.
+show a clear button on the display. (css, display:block)
 ```javascript
 $("#inputText").pureClearButton('show');
 ```
 
 + __.pureClearButtn('hide')__
 
-Clear Button을 화면에 표시하지 않는다.
+Do not show a clear button on the display. (css, display:none)
 ```javascript
 $("#inputText").pureClearButton('hide');
 ```
