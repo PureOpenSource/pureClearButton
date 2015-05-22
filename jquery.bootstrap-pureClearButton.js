@@ -1,5 +1,5 @@
 /*********************************************************************************************
- * PureClearButton. v0.1
+ * PureClearButton. v0.1.1
  * ===========================================================================================
  * homepage: http://pureopensource.github.io/pureClearButton/
  * 
@@ -19,7 +19,7 @@
 		this.$clearButton = null;
 	}
 	
-	PureClearButton.VERSION = '0.1';
+	PureClearButton.VERSION = '0.1.1';
 	
 	PureClearButton.DEFIN = {
 		clearClickEvent: 'click.pure.button',
